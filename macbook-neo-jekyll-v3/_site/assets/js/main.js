@@ -85,7 +85,7 @@ if (form) {
         statusEl.textContent = "Reservation submitted. Your team can now review it in Google Sheets.";
         statusEl.className = "form-status success";
         form.reset();
-        if (modelSelect) modelSelect.value = 'MacBook Neo 512GB';
+        if (modelSelect) modelSelect.value = 'MacBook Neo 256GB';
         syncSummary();
       } else {
         throw new Error(result.message || "Submission failed.");
