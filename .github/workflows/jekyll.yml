@@ -1,78 +1,70 @@
-# Name of the workflow (shows in GitHub Actions UI)
+# Name of the workflow shown in the GitHub Actions tab
 name: Deploy Jekyll site to Pages
 
-# When this workflow runs
+# Run this workflow automatically on pushes to main,
+# and also allow it to be started manually from the Actions tab
 on:
-  # Automatically run on pushes to main branch
   push:
     branches: ["main"]
-
-  # Allow manual trigger from GitHub Actions tab
   workflow_dispatch:
 
-# Permissions for the GitHub token used during the workflow
+# Permissions needed for GitHub Pages deployment
 permissions:
-  contents: read        # allows reading repository code
-  pages: write          # allows deploying to GitHub Pages
-  id-token: write       # required for secure deployment (OIDC)
+  contents: read
+  pages: write
+  id-token: write
 
 # Prevent overlapping deployments
 concurrency:
-  group: "pages"        # only one Pages deployment at a time
-  cancel-in-progress: false  # don't cancel a deployment once started
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  # =========================
-  # BUILD JOB
-  # =========================
+  # Build the Jekyll site
   build:
-    runs-on: ubuntu-latest   # use latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout your repository code
+      # Download repository contents to the runner
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Step 2: Set up Ruby + install gems from your Jekyll project
+      # Install Ruby and bundle gems from the Jekyll project folder
       - name: Setup Ruby
         uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
         with:
-          ruby-version: "3.1"   # Ruby version for Jekyll
-          bundler-cache: true   # automatically runs bundle install + caches gems
-          cache-version: 0      # bump this if you need to clear cache
-          working-directory: macbook-neo-jekyll-v3  # IMPORTANT: where your Gemfile lives
+          ruby-version: "3.3"
+          bundler-cache: true
+          cache-version: 0
+          working-directory: macbook-neo-jekyll-v3
 
-      # Step 3: Configure GitHub Pages (sets base path, environment, etc.)
+      # Configure Pages environment and base path
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      # Step 4: Build the Jekyll site
+      # Build the Jekyll site from the subfolder
       - name: Build with Jekyll
-        working-directory: macbook-neo-jekyll-v3  # run build inside your project folder
+        working-directory: macbook-neo-jekyll-v3
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
-          JEKYLL_ENV: production  # ensures production optimizations
+          JEKYLL_ENV: production
 
-      # Step 5: Upload the generated static site as an artifact
+      # Upload the generated _site folder as the Pages artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: macbook-neo-jekyll-v3/_site  # where Jekyll outputs the built site
+          path: macbook-neo-jekyll-v3/_site
 
-  # =========================
-  # DEPLOY JOB
-  # =========================
+  # Deploy the built artifact to GitHub Pages
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}  # final live URL
-
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build   # only run after build succeeds
+    needs: build
 
     steps:
-      # Step 6: Deploy the uploaded artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
