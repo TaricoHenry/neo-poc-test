@@ -1,0 +1,139 @@
+:root {
+  --bg: #f5f5f7;
+  --panel: #ffffff;
+  --text: #101010;
+  --muted: #5f6470;
+  --dark: #0b0c10;
+  --dark-2: #13151b;
+  --line: rgba(16, 16, 16, 0.08);
+  --accent: #0a84ff;
+  --accent-soft: rgba(10, 132, 255, 0.12);
+  --silver: linear-gradient(135deg, #dcdfe4, #f8f9fb);
+  --blush: linear-gradient(135deg, #efc4d6, #f9e8ef);
+  --citrus: linear-gradient(135deg, #d2f04f, #f1ffa2);
+  --indigo: linear-gradient(135deg, #5468ff, #98a7ff);
+  --radius: 24px;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+code { background: rgba(255,255,255,.08); padding: .15rem .35rem; border-radius: 8px; }
+.container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+.section { padding: 88px 0; }
+.section-dark { background: var(--dark); color: #fff; }
+.section-soft { background: #eaedf3; }
+.section-heading { max-width: 760px; margin-bottom: 38px; }
+.section-heading h2, .hero-copy h1, #checkout h2 { margin: 0 0 16px; line-height: .98; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--muted); margin-bottom: 12px; font-weight: 700; }
+.section-dark .eyebrow { color: rgba(255,255,255,.72); }
+.lead, .section-copy { color: var(--muted); font-size: 1.06rem; line-height: 1.7; }
+.section-dark .lead, .section-dark .section-copy { color: rgba(255,255,255,.74); }
+
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(16px);
+  background: rgba(245,245,247,.78);
+  border-bottom: 1px solid var(--line);
+}
+.nav-wrap { display: flex; justify-content: space-between; align-items: center; min-height: 72px; }
+.brand { font-weight: 800; }
+.nav { display: flex; gap: 20px; color: var(--muted); font-size: .95rem; }
+
+.hero-grid, .checkout-grid, .local-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 42px;
+  align-items: center;
+}
+.hero-copy h1 { font-size: clamp(3rem, 8vw, 6.2rem); }
+.hero-copy { padding: 20px 0; }
+.cta-row { display: flex; gap: 14px; margin: 28px 0 20px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 700;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-secondary { background: #fff; border: 1px solid var(--line); }
+.btn-full { width: 100%; border: 0; cursor: pointer; }
+.hero-notes { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-notes span {
+  padding: 10px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--muted); font-size: .92rem;
+}
+
+.hero-visual {
+  min-height: 540px; border-radius: 40px; background: radial-gradient(circle at top, rgba(255,255,255,.9), rgba(226,230,239,.8));
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.neo-stack { position: absolute; inset: 0; display: grid; place-items: center; }
+.neo-card {
+  position: absolute; width: min(460px, 82%); aspect-ratio: 1.45 / 1; border-radius: 26px;
+  box-shadow: 0 26px 60px rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.6);
+}
+.neo-card::after {
+  content: ""; position: absolute; inset: 18px; border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,255,255,.14));
+}
+.neo-silver { background: var(--silver); transform: translate(-10px, 85px) rotate(-16deg); }
+.neo-blush { background: var(--blush); transform: translate(88px, 32px) rotate(12deg); }
+.neo-citrus { background: var(--citrus); transform: translate(-74px, -22px) rotate(-10deg); }
+.neo-indigo { background: var(--indigo); transform: translate(40px, -102px) rotate(15deg); }
+
+.feature-grid, .product-grid, .info-panels {
+  display: grid; gap: 22px;
+}
+.feature-grid { grid-template-columns: repeat(4, 1fr); }
+.product-grid { grid-template-columns: repeat(3, 1fr); }
+.info-panels { grid-template-columns: 1fr; }
+.feature-card, .product-card, .info-panel, .checkout-card {
+  border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow);
+}
+.feature-card { padding: 26px; color: var(--text); }
+.feature-card p { color: var(--muted); line-height: 1.65; }
+.product-card { padding: 28px; border: 1px solid var(--line); }
+.product-card-featured { transform: scale(1.02); border: 1px solid rgba(10,132,255,.35); }
+.swatch { width: 54px; height: 54px; display: inline-block; border-radius: 14px; margin-bottom: 16px; }
+.swatch.silver { background: var(--silver); }
+.swatch.citrus { background: var(--citrus); }
+.swatch.indigo { background: var(--indigo); }
+.price { font-size: 2rem; font-weight: 800; margin: 18px 0; }
+.product-card ul { padding-left: 18px; color: var(--muted); line-height: 1.8; }
+.info-panel { padding: 24px; }
+.info-panel p { color: var(--muted); margin: 8px 0 0; line-height: 1.65; }
+
+.checkout-card { padding: 28px; background: var(--dark-2); }
+.checkout-form { display: grid; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+label { display: grid; gap: 8px; font-weight: 600; }
+input, select, textarea {
+  width: 100%; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06);
+  color: #fff; padding: 14px 16px; border-radius: 14px; font: inherit;
+}
+textarea { resize: vertical; }
+.form-status { min-height: 24px; color: rgba(255,255,255,.8); }
+.form-status.success { color: #95f2b2; }
+.form-status.error { color: #ffb0b0; }
+
+@media (max-width: 980px) {
+  .feature-grid, .product-grid { grid-template-columns: 1fr 1fr; }
+  .hero-grid, .checkout-grid, .local-grid { grid-template-columns: 1fr; }
+  .hero-visual { min-height: 420px; }
+}
+
+@media (max-width: 720px) {
+  .nav { display: none; }
+  .section { padding: 72px 0; }
+  .feature-grid, .product-grid, .form-row { grid-template-columns: 1fr; }
+  .hero-copy h1 { font-size: 3.2rem; }
+  .price { font-size: 1.8rem; }
+}

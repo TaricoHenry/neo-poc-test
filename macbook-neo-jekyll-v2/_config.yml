@@ -1,0 +1,7 @@
+title: MacBook Neo Guyana
+email: developers@enetworks.gy
+description: MacBook Neo landing page for Guyana with offline-first checkout and Google Sheets order capture.
+baseurl: ""
+url: ""
+markdown: kramdown
+plugins: []

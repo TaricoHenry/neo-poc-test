@@ -1,0 +1,236 @@
+---
+layout: default
+title: MacBook Neo Guyana
+description: MacBook Neo for work, school, and everyday life in Guyana. Reserve now and complete checkout with cash, bank transfer, or mobile money.
+---
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">MacBook Neo Guyana</a>
+    <nav class="nav">
+      <a href="#highlights">Highlights</a>
+      <a href="#models">Models</a>
+      <a href="#why-guyana">Why Guyana</a>
+      <a href="#checkout">Reserve</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero section">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Inspired by Apple’s MacBook Neo campaign</p>
+        <h1>Hello, Neo.<br />Now in Guyana.</h1>
+        <p class="lead">
+          Beautiful colors. Fast everyday performance. Battery life that keeps up with classes,
+          business, travel, and everything in between.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#checkout">Reserve yours</a>
+          <a class="btn btn-secondary" href="#models">See models</a>
+        </div>
+        <div class="hero-notes">
+          <span>Cash pickup</span>
+          <span>Bank transfer</span>
+          <span>MMG accepted</span>
+          <span>Order logged to Google Sheets</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="neo-stack">
+          <div class="neo-card neo-silver"></div>
+          <div class="neo-card neo-blush"></div>
+          <div class="neo-card neo-citrus"></div>
+          <div class="neo-card neo-indigo"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlights" class="section section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Get the highlights</p>
+        <h2>Built for everyday speed.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Four standout colors</h3>
+          <p>Silver, Blush, Citrus, and Indigo give the lineup a bright, premium identity.</p>
+        </article>
+        <article class="feature-card">
+          <h3>All-day battery</h3>
+          <p>Designed for workdays, classes, study sessions, and entertainment without outlet anxiety.</p>
+        </article>
+        <article class="feature-card">
+          <h3>13-inch vivid display</h3>
+          <p>A sharp, bright screen for spreadsheets, video calls, movies, design work, and content creation.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Made for AI tools</h3>
+          <p>Run your daily productivity apps, creative workflows, and modern AI-powered software smoothly.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="models" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Choose your finish</p>
+        <h2>Love at first Mac.</h2>
+        <p class="section-copy">Pick a model, color, and how you want to pay. This page is designed for reservation-first checkout in Guyana.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <span class="swatch silver"></span>
+          <h3>MacBook Neo 256GB</h3>
+          <p>Ideal for students, office work, browsing, email, and everyday tasks.</p>
+          <div class="price">G$289,000</div>
+          <ul>
+            <li>13-inch display</li>
+            <li>Up to 16 hours battery</li>
+            <li>Lightweight everyday design</li>
+          </ul>
+        </article>
+        <article class="product-card product-card-featured">
+          <span class="swatch citrus"></span>
+          <h3>MacBook Neo 512GB</h3>
+          <p>Best for work, content creation, business use, and longer-term storage needs.</p>
+          <div class="price">G$349,000</div>
+          <ul>
+            <li>More room for files</li>
+            <li>Excellent multitasking</li>
+            <li>Top pick in Guyana</li>
+          </ul>
+        </article>
+        <article class="product-card">
+          <span class="swatch indigo"></span>
+          <h3>MacBook Neo 512GB + Setup</h3>
+          <p>Includes first-time setup help, app install guidance, and local onboarding support.</p>
+          <div class="price">G$369,000</div>
+          <ul>
+            <li>Business-ready setup</li>
+            <li>Data transfer guidance</li>
+            <li>Local support handoff</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-guyana" class="section section-soft">
+    <div class="container local-grid">
+      <div>
+        <p class="eyebrow">Built for local buying habits</p>
+        <h2>Checkout without credit cards.</h2>
+        <p>
+          Instead of forcing card payments, this flow captures the customer’s order details and preferred payment method,
+          then sends the final checkout record straight into Google Sheets for fulfillment.
+        </p>
+      </div>
+      <div class="info-panels">
+        <div class="info-panel">
+          <strong>Payment options</strong>
+          <p>Cash on pickup, bank transfer, and MMG are included in the checkout flow.</p>
+        </div>
+        <div class="info-panel">
+          <strong>Operations friendly</strong>
+          <p>Every final reservation can be routed to a Google Sheet for sales follow-up and inventory tracking.</p>
+        </div>
+        <div class="info-panel">
+          <strong>Fast deployment</strong>
+          <p>Works as a Jekyll static site with a lightweight Google Apps Script endpoint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="checkout" class="section section-dark">
+    <div class="container checkout-grid">
+      <div>
+        <p class="eyebrow">Reserve now</p>
+        <h2>Final checkout</h2>
+        <p class="section-copy">
+          Complete this form and your order is sent to your Google Sheet. Replace the Apps Script URL in
+          <code>assets/js/main.js</code> with your deployed endpoint.
+        </p>
+      </div>
+      <div class="checkout-card">
+        <form id="checkoutForm" class="checkout-form">
+          <div class="form-row">
+            <label>
+              Full name
+              <input type="text" name="fullName" required />
+            </label>
+            <label>
+              Phone / WhatsApp
+              <input type="text" name="phone" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Email address
+              <input type="email" name="email" />
+            </label>
+            <label>
+              Delivery area
+              <input type="text" name="location" placeholder="Georgetown, East Bank, Berbice..." required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Model
+              <select name="model" required>
+                <option value="">Select a model</option>
+                <option>MacBook Neo 256GB</option>
+                <option>MacBook Neo 512GB</option>
+                <option>MacBook Neo 512GB + Setup</option>
+              </select>
+            </label>
+            <label>
+              Color
+              <select name="color" required>
+                <option value="">Select a color</option>
+                <option>Silver</option>
+                <option>Blush</option>
+                <option>Citrus</option>
+                <option>Indigo</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Preferred payment method
+              <select name="paymentMethod" required>
+                <option value="">Choose one</option>
+                <option>Cash on pickup</option>
+                <option>Bank transfer</option>
+                <option>MMG</option>
+              </select>
+            </label>
+            <label>
+              Pickup or delivery
+              <select name="fulfillment" required>
+                <option value="">Choose one</option>
+                <option>Pickup</option>
+                <option>Delivery</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Notes
+            <textarea name="notes" rows="4" placeholder="Best time to call, business name, setup needs, etc."></textarea>
+          </label>
+
+          <button class="btn btn-primary btn-full" type="submit">Submit reservation</button>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
