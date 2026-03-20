@@ -15,16 +15,16 @@ const summaryPayment = document.querySelector('[data-summary-payment]');
 const summaryFulfillment = document.querySelector('[data-summary-fulfillment]');
 
 const PRICE_MAP = {
-  'MacBook Neo 256GB': '$130,000',
-  'MacBook Neo 512GB': '$145,000',
-  'MacBook Neo 512GB + Setup': '$160,000'
+  'MacBook Neo 256GB': '$140,000',
+  'MacBook Neo 512GB': '$155,000',
+  'MacBook Neo 512GB + Setup': '$165,000'
 };
 
 function syncSummary() {
   if (!form) return;
   const model = modelSelect.value || 'MacBook Neo 256GB';
   const colour = colourSelect.value || "Indigo"
-  const price = PRICE_MAP[model] || '$130,000';
+  const price = PRICE_MAP[model] || '$140,000';
   const payment = paymentSelect.value || 'Choose at checkout';
   const fulfillment = fulfillmentSelect.value || 'Pickup or delivery';
 
