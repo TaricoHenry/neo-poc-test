@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MacBook Neo Guyana</title>
-    <meta name="description" content="MacBook Neo for work, school, and everyday life in Guyana. Reserve now and complete checkout with cash, bank transfer, or mobile money." />
-    <meta name="theme-color" content="#0b0c10" />
-    <meta property="og:title" content="MacBook Neo Guyana" />
-    <meta property="og:description" content="MacBook Neo for work, school, and everyday life in Guyana. Reserve now and complete checkout with cash, bank transfer, or mobile money." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="http://localhost:4000/assets/images/hero-laptop.svg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="MacBook Neo Guyana" />
-    <meta name="twitter:description" content="MacBook Neo for work, school, and everyday life in Guyana. Reserve now and complete checkout with cash, bank transfer, or mobile money." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MacBook Neo Guyana</title>
+  <meta name="description" content="MacBook Neo for work, school, and everyday life in Guyana. Reserve now and complete checkout with cash, bank transfer, or mobile money." />
+  <meta name="theme-color" content="#0b0c10" />
+  <meta property="og:title" content="MacBook Neo Guyana" />
+  <meta property="og:description" content="MacBook Neo for work, school, and everyday life in Guyana. Reserve now and complete checkout with cash, bank transfer, or mobile money." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/images/hero-laptop.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MacBook Neo Guyana" />
+  <meta name="twitter:description" content="MacBook Neo for work, school, and everyday life in Guyana. Reserve now and complete checkout with cash, bank transfer, or mobile money." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+  <header class="site-header">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <div class="container nav-wrap">
     <a class="brand" href="#top">MacBook Neo Guyana</a>
@@ -124,8 +127,16 @@
             <li>Smooth multitasking</li>
             <li>Great long-term value</li>
           </ul>
-          <button class="btn btn-secondary product-select" data-model="MacBook Neo 512GB" data-price="$145,000">Choose
-            this model</button>
+
+          <!-- Fixed data-price to match PRICE_MAP -->
+          <button
+            class="btn btn-secondary product-select"
+            data-model="MacBook Neo 512GB"
+            data-price="$155,000"
+            type="button"
+          >
+            Choose this model
+          </button>
         </article>
 
         <article class="product-card product-card-featured product-card-256">
@@ -139,8 +150,16 @@
             <li>Up to 16 hours battery life</li>
             <li>Lightweight and portable</li>
           </ul>
-          <button class="btn btn-primary product-select" data-model="MacBook Neo 256GB" data-price="$130,000">Choose
-            this model</button>
+
+          <!-- Fixed data-price to match real PRICE_MAP -->
+          <button
+            class="btn btn-primary product-select"
+            data-model="MacBook Neo 256GB"
+            data-price="$140,000"
+            type="button"
+          >
+            Choose this model
+          </button>
         </article>
 
         <article class="product-card product-card-512-setup">
@@ -153,8 +172,16 @@
             <li>Guided data transfer</li>
             <li>Local support</li>
           </ul>
-          <button class="btn btn-secondary product-select" data-model="MacBook Neo 512GB + Setup"
-            data-price="$155,000">Choose this model</button>
+
+          <!-- Fixed data-price to match real PRICE_MAP -->
+          <button
+            class="btn btn-secondary product-select"
+            data-model="MacBook Neo 512GB + Setup"
+            data-price="$165,000"
+            type="button"
+          >
+            Choose this model
+          </button>
         </article>
       </div>
     </div>
@@ -219,34 +246,70 @@
           <h3>Your selection</h3>
           <div class="summary-row"><span>Model</span><strong data-summary-model>MacBook Neo 256GB</strong></div>
           <div class="summary-row"><span>Colour</span><strong data-summary-colour>Indigo</strong></div>
-          <div class="summary-row"><span>Price</span><strong data-summary-price>$130,000</strong></div>
+
+          <!-- Fixed default summary price to match  real pricing -->
+          <div class="summary-row"><span>Price</span><strong data-summary-price>$140,000</strong></div>
+
           <div class="summary-row"><span>Payment</span><strong data-summary-payment>Choose at checkout</strong></div>
-          <div class="summary-row"><span>Fulfillment</span><strong data-summary-fulfillment>Pickup or delivery</strong>
-          </div>
+          <div class="summary-row"><span>Fulfillment</span><strong data-summary-fulfillment>Pickup or delivery</strong></div>
         </div>
       </div>
       <div class="checkout-card">
         <form id="checkoutForm" class="checkout-form">
+          <!-- Hidden price field kept for summary sync / display -->
           <input type="hidden" name="price" value="$140,000" />
+
           <div class="form-row">
             <label>
               Full name
-              <input type="text" name="fullName" required />
+              <input
+                type="text"
+                name="fullName"
+                autocomplete="name"
+                required
+              />
             </label>
+
             <label>
               Phone / WhatsApp
-              <input type="text" name="phone" required />
+
+            
+              <input
+                type="text"
+                name="phone"
+                inputmode="tel"
+                autocomplete="tel"
+                pattern="[0-9+\-\s()]{7,20}"
+                autocomplete="tel"
+                required
+              />
             </label>
           </div>
 
           <div class="form-row">
             <label>
               Email address
-              <input type="email" name="email" />
+
+              <!-- Added required to match backend validation -->
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
             </label>
+
             <label>
-              Delivery area
-              <input type="text" name="location" placeholder="Georgetown, East Bank, Berbice..." required />
+              Delivery area / Location
+
+              <!-- Changed name from "location" to "deliveryArea" to match backend -->
+              <!-- Left as not required here so JS can require it only when Delivery is chosen -->
+              <input
+                type="text"
+                name="location"
+                placeholder="Georgetown, East Bank, Berbice..."
+                required
+              />
             </label>
           </div>
 
@@ -277,6 +340,7 @@
               <select name="paymentMethod" required>
                 <option value="">Choose one</option>
                 <option>Cash on pickup</option>
+                <option>Cash on delivery</option>
                 <option>Bank transfer</option>
                 <option>MMG</option>
               </select>
@@ -293,11 +357,17 @@
 
           <label>
             Notes
-            <textarea name="notes" rows="4"
-              placeholder="Best time to call, business name, or setup requests."></textarea>
+            <textarea
+              name="notes"
+              rows="4"
+              placeholder="Best time to call, business name, or setup requests."
+            ></textarea>
           </label>
 
-          <button class="btn btn-primary btn-full" type="submit">Submit reservation</button>
+          <button class="btn btn-primary btn-full" type="submit">
+            Submit reservation
+          </button>
+
           <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -314,11 +384,12 @@
     <a class="btn btn-secondary" href="#top">Back to top</a>
   </div>
 </footer>
-    <script>
-      window.SITE_CONFIG = {
-        googleSheetWebAppUrl: "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYED_WEB_APP/exec"
-      };
-    </script>
-    <script src="/assets/js/main.js"></script>
-  </body>
+  <script>
+    window.SITE_CONFIG = {
+      orderApiUrl: "http://127.0.0.1:5001/macbook-neo/us-central1/api/v1/orders"
+    };
+  </script>
+  <script src="/assets/js/main.js"></script>
+</body>
+
 </html>
